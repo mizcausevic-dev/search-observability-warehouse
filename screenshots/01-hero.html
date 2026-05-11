@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Observability Warehouse - Hero</title>
+  <style>
+    body{margin:0;background:#07111d;font-family:Segoe UI,Arial,sans-serif;color:#edf2ff}
+    .frame{width:1600px;height:900px;padding:48px;box-sizing:border-box;background:linear-gradient(180deg,#07111d 0%,#0b1627 100%)}
+    .panel{height:100%;border:1px solid #22385c;border-radius:32px;background:#0f1a2f;padding:42px;box-sizing:border-box}
+    .eyebrow{font-size:22px;letter-spacing:.26em;color:#7ec4ff}
+    h1{font:700 76px/1.04 Georgia,serif;margin:20px 0 18px;color:#f5eed9;max-width:1200px}
+    p{font-size:26px;line-height:1.44;color:#b6c0d1;max-width:1150px;margin:0 0 30px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .card{background:#16233c;border:1px solid #28456d;border-radius:24px;padding:26px}
+    .label{font-size:18px;color:#aeb9cf;text-transform:uppercase}
+    .value{font:700 54px/1 Georgia,serif;color:#f7ecc5;margin:14px 0 10px}
+    .copy{font-size:18px;line-height:1.35;color:#d1d8e6}
+    .lane{margin-top:28px;border:1px solid #2e4d77;border-radius:24px;padding:26px}
+    .tag{font-size:16px;letter-spacing:.22em;color:#ffc4d8;text-transform:uppercase}
+    .lane-title{font:700 46px/1.1 Georgia,serif;color:#f5edd6;margin:14px 0 10px}
+    .lane-body{font-size:23px;color:#b7c0d4}
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="panel">
+      <div class="eyebrow">SEARCH OBSERVABILITY WAREHOUSE</div>
+      <h1>Put search console, crawl, index coverage, and URL risk inside one warehouse layer the team can actually query.</h1>
+      <p>This project treats search observability like analytics engineering, not a stack of disconnected exports. Facts, rollups, freshness checks, and anomaly flags all live in one model.</p>
+      <div class="stats">
+        <div class="card"><div class="label">Sites modeled</div><div class="value">2</div><div class="copy">US and UK surfaces with shared schema and separate freshness pressure.</div></div>
+        <div class="card"><div class="label">Page groups</div><div class="value">4</div><div class="copy">Template-level ownership for blog, service, pricing, and international lanes.</div></div>
+        <div class="card"><div class="label">Warehouse views</div><div class="value">4</div><div class="copy">Overview, page rollup, freshness gaps, and crawl-index mismatch views.</div></div>
+        <div class="card"><div class="label">Critical anomalies</div><div class="value">1</div><div class="copy">The UK service lane is carrying the highest visibility and indexation pressure.</div></div>
+      </div>
+      <div class="lane">
+        <div class="tag">Current decision lane</div>
+        <div class="lane-title">Stabilize UK service index coverage before scaling more demand into a lane that is still leaking discoverability.</div>
+        <div class="lane-body">The warehouse is built to connect KPI loss to crawl, freshness, and exclusion mechanics instead of reporting them in isolation.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

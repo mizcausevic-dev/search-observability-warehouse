@@ -1,0 +1,87 @@
+erDiagram
+  sites ||--o{ page_groups : contains
+  sites ||--o{ source_freshness : tracks
+  sites ||--o{ crawl_daily : observes
+  page_groups ||--o{ search_console_daily : aggregates
+  page_groups ||--o{ index_coverage_daily : aggregates
+  page_groups ||--o{ url_signals : contains
+  page_groups ||--o{ anomaly_flags : raises
+
+  sites {
+    INTEGER site_id PK
+    TEXT site_code
+    TEXT domain
+    TEXT market
+  }
+
+  page_groups {
+    INTEGER page_group_id PK
+    INTEGER site_id FK
+    TEXT page_group_key
+    TEXT template_name
+    TEXT business_owner
+  }
+
+  source_freshness {
+    INTEGER freshness_id PK
+    INTEGER site_id FK
+    TEXT source_name
+    TEXT last_loaded_at
+    INTEGER freshness_sla_hours
+    INTEGER row_count
+  }
+
+  crawl_daily {
+    INTEGER crawl_id PK
+    INTEGER site_id FK
+    TEXT crawl_date
+    INTEGER pages_crawled
+    INTEGER pages_discovered
+    REAL average_response_ms
+    REAL error_rate
+    INTEGER blocked_by_robots
+    REAL anomaly_score
+  }
+
+  search_console_daily {
+    INTEGER search_fact_id PK
+    INTEGER page_group_id FK
+    TEXT activity_date
+    INTEGER impressions
+    INTEGER clicks
+    REAL avg_position
+    REAL ctr
+  }
+
+  index_coverage_daily {
+    INTEGER coverage_fact_id PK
+    INTEGER page_group_id FK
+    TEXT coverage_date
+    INTEGER indexed_urls
+    INTEGER excluded_urls
+    INTEGER discovered_urls
+    INTEGER canonical_conflicts
+    INTEGER noindex_urls
+  }
+
+  url_signals {
+    INTEGER url_signal_id PK
+    INTEGER page_group_id FK
+    TEXT url_path
+    TEXT crawl_status
+    TEXT index_status
+    TEXT canonical_target
+    INTEGER response_code
+    TEXT last_crawled_at
+  }
+
+  anomaly_flags {
+    INTEGER anomaly_id PK
+    INTEGER page_group_id FK
+    TEXT flag_date
+    TEXT anomaly_type
+    TEXT severity
+    TEXT summary
+    REAL impact_metric
+    TEXT recommended_action
+  }

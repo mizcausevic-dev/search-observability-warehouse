@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Observability Warehouse - ERD</title>
+  <style>
+    body{margin:0;background:#08111c;font-family:Segoe UI,Arial,sans-serif}
+    .frame{width:1600px;height:900px;padding:48px;box-sizing:border-box;background:#08111c}
+    .panel{height:100%;border-radius:32px;border:1px solid #22385c;background:#0f1a2f;padding:42px}
+    .eyebrow{font-size:22px;letter-spacing:.24em;color:#7ac5ff;text-transform:uppercase}
+    h1{font:700 64px/1.08 Georgia,serif;color:#f4ecd6;margin:18px 0 26px;max-width:1180px}
+    .grid{display:grid;grid-template-columns:260px 260px 260px 260px;gap:22px}
+    .box{background:#17233c;border:1px solid #29456e;border-radius:22px;padding:20px}
+    .box h2{margin:0 0 12px;font-size:26px;color:#f4edd8}
+    .box ul{margin:0;padding-left:20px;color:#bec9da;font-size:18px;line-height:1.4}
+    .links{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+    .strip{background:#122038;border:1px solid #2d4c75;border-radius:22px;padding:20px}
+    .strip h3{margin:0 0 10px;font-size:22px;color:#dfe8f5}
+    .strip p{margin:0;color:#bdc8d9;font-size:18px;line-height:1.45}
+  </style>
+</head>
+<body>
+<div class="frame"><div class="panel">
+  <div class="eyebrow">Warehouse Layout</div>
+  <h1>The warehouse separates stable business entities from volatile search facts, then recombines them in rollup views built for diagnostics.</h1>
+  <div class="grid">
+    <div class="box"><h2>sites</h2><ul><li>domain</li><li>market</li><li>site code</li></ul></div>
+    <div class="box"><h2>page_groups</h2><ul><li>template</li><li>owner lane</li><li>group key</li></ul></div>
+    <div class="box"><h2>search_console_daily</h2><ul><li>impressions</li><li>clicks</li><li>CTR</li><li>position</li></ul></div>
+    <div class="box"><h2>index_coverage_daily</h2><ul><li>indexed</li><li>excluded</li><li>canonical conflicts</li></ul></div>
+    <div class="box"><h2>crawl_daily</h2><ul><li>response ms</li><li>error rate</li><li>robots blocks</li></ul></div>
+    <div class="box"><h2>url_signals</h2><ul><li>crawl status</li><li>index status</li><li>response code</li></ul></div>
+    <div class="box"><h2>source_freshness</h2><ul><li>last loaded at</li><li>SLA hours</li><li>row count</li></ul></div>
+    <div class="box"><h2>anomaly_flags</h2><ul><li>severity</li><li>impact metric</li><li>action</li></ul></div>
+  </div>
+  <div class="links">
+    <div class="strip"><h3>Rollup views</h3><p>`vw_site_overview`, `vw_page_group_rollup`, `vw_freshness_gaps`, and `vw_crawl_index_mismatches` provide the operator layer.</p></div>
+    <div class="strip"><h3>Diagnostic intent</h3><p>The shape is optimized for explaining KPI movement, not just reporting it. Freshness drift, exclusions, and crawl failures can be traced into the same ownership lane.</p></div>
+  </div>
+</div></div>
+</body>
+</html>

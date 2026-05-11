@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Observability Warehouse - Proof</title>
+  <style>
+    body{margin:0;background:#08111c;font-family:Consolas,monospace}
+    .frame{width:1600px;height:900px;padding:48px;box-sizing:border-box;background:#08111c}
+    .panel{height:100%;border-radius:32px;border:1px solid #22385c;background:#101a2f;padding:42px}
+    .eyebrow{font-family:Segoe UI,Arial,sans-serif;font-size:22px;letter-spacing:.24em;color:#7cc2ff;text-transform:uppercase}
+    .title{font:700 62px/1.08 Georgia,serif;color:#f5edd7;margin:18px 0 26px;max-width:1180px}
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}
+    .code,.facts{background:#091321;border:1px solid #27476f;border-radius:24px;padding:24px}
+    pre{margin:0;color:#d9ffe7;font-size:22px;line-height:1.42;white-space:pre-wrap}
+    .facts h2{font-family:Segoe UI,Arial,sans-serif;font-size:24px;color:#e0e8f3;margin:0 0 14px}
+    .facts ul{font-family:Segoe UI,Arial,sans-serif;margin:0;padding-left:22px;color:#c4cedf;font-size:21px;line-height:1.5}
+  </style>
+</head>
+<body>
+<div class="frame"><div class="panel">
+  <div class="eyebrow">Validation Proof</div>
+  <div class="title">The warehouse is not just an ERD. The schema, seeds, views, and operator queries run through a real validation harness.</div>
+  <div class="grid">
+    <div class="code"><pre>{
+  "site_overview": [
+    {
+      "site_code": "kg-main",
+      "average_crawl_anomaly_score": 0.59
+    },
+    {
+      "site_code": "kg-uk",
+      "average_crawl_anomaly_score": 0.78
+    }
+  ],
+  "freshness_gaps": [
+    {
+      "site_code": "kg-uk",
+      "source_name": "search_console",
+      "freshness_status": "breach"
+    }
+  ]
+}</pre></div>
+    <div class="facts">
+      <h2>Proof points</h2>
+      <ul>
+        <li>The schema, seeds, and views execute in SQLite.</li>
+        <li>Unit tests verify rollup counts, breach detection, and mismatch surfacing.</li>
+        <li>Queries are organized as warehouse-facing operator diagnostics.</li>
+        <li>The model ties KPI loss to index, crawl, and freshness mechanics.</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+</body>
+</html>

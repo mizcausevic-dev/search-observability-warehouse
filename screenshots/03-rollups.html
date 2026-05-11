@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Observability Warehouse - Rollups</title>
+  <style>
+    body{margin:0;background:#08111c;font-family:Segoe UI,Arial,sans-serif}
+    .frame{width:1600px;height:900px;padding:48px;box-sizing:border-box;background:#08111c}
+    .panel{height:100%;border-radius:32px;border:1px solid #22385c;background:#101a2f;padding:42px}
+    .eyebrow{font-size:22px;letter-spacing:.24em;color:#7cc2ff;text-transform:uppercase}
+    h1{font:700 66px/1.05 Georgia,serif;color:#f5edd7;margin:18px 0 26px;max-width:1180px}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    table{width:100%;border-collapse:collapse;background:#17233d;border:1px solid #28466f;border-radius:24px;overflow:hidden}
+    th,td{padding:18px 20px;border-bottom:1px solid #243a60;font-size:20px;color:#d5dced;text-align:left}
+    th{font-size:16px;text-transform:uppercase;color:#9eb3d0;letter-spacing:.12em}
+    .side{display:grid;gap:20px}
+    .card{background:#16233c;border:1px solid #2b4a73;border-radius:22px;padding:22px}
+    .label{font-size:18px;color:#b7c2d5;text-transform:uppercase}
+    .value{font:700 52px/1 Georgia,serif;color:#f7ecc4;margin:12px 0 8px}
+    .copy{font-size:18px;color:#c2cddd;line-height:1.4}
+  </style>
+</head>
+<body>
+<div class="frame"><div class="panel">
+  <div class="eyebrow">KPI Rollups</div>
+  <h1>The rollup views make template performance, freshness drift, and anomaly concentration readable without opening five separate tools.</h1>
+  <div class="grid">
+    <table>
+      <thead>
+        <tr><th>Page group</th><th>Owner</th><th>Impressions</th><th>Clicks</th><th>Avg CTR</th><th>Canonical conflicts</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>blog-guides</td><td>Content + SEO</td><td>287800</td><td>12420</td><td>4.32%</td><td>26</td></tr>
+        <tr><td>services-core</td><td>Revenue + Marketing</td><td>186800</td><td>11352</td><td>6.08%</td><td>8</td></tr>
+        <tr><td>pricing</td><td>Growth + RevOps</td><td>90400</td><td>3978</td><td>4.41%</td><td>2</td></tr>
+        <tr><td>uk-services</td><td>International Growth</td><td>78700</td><td>3133</td><td>3.99%</td><td>19</td></tr>
+      </tbody>
+    </table>
+    <div class="side">
+      <div class="card"><div class="label">Freshness breach</div><div class="value">1</div><div class="copy">UK search console ingestion is outside its SLA window and should not be trusted as current.</div></div>
+      <div class="card"><div class="label">Mismatch URLs</div><div class="value">3+</div><div class="copy">Soft 404, redirect chain, and blocked pages are already being surfaced in the mismatch view.</div></div>
+      <div class="card"><div class="label">Critical anomaly</div><div class="value">UK services</div><div class="copy">The international service lane is the one carrying the most urgent crawl and index pressure.</div></div>
+    </div>
+  </div>
+</div></div>
+</body>
+</html>
