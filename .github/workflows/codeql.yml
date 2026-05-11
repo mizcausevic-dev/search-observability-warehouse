@@ -18,11 +18,11 @@ jobs:
       security-events: write
     steps:
       - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v4
         with:
           languages: python
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: python -m unittest discover -s tests
-      - uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v4
