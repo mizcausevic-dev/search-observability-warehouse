@@ -88,7 +88,7 @@ The included validation harness loads the warehouse into SQLite, executes the sc
 ## Run Locally
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\search-observability-warehouse"
+cd search-observability-warehouse
 python .\scripts\run_demo.py
 python -m unittest discover -s tests
 ```
@@ -96,7 +96,7 @@ python -m unittest discover -s tests
 ## Validation
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\search-observability-warehouse"
+cd search-observability-warehouse
 python .\scripts\run_demo.py
 python -m unittest discover -s tests
 ```
